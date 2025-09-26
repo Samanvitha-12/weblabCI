@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My HomePage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f7f7f7;
+      font-size: 18px;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    .menu {
+      position: fixed;
+      right: 20px;
+      top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .menu label {
+      background: white;
+      color: red;
+      border: 2px solid red;
+      padding: 10px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+      font-weight: bold;
+      user-select: none;
+    }
+    .menu label:hover {
+      background: #fee6e6;
+    }
+    .content {
+      margin: 50px auto;
+      padding: 50px 40px;
+      width: 900px;
+      min-height: 600px;
+      border-radius: 15px;
+      background: #f9e4ec;
+      color: #222;
+      box-shadow: 0 5px 35px #0001;
+      transition: background 0.3s, color 0.3s;
+      font-size: 20px;
+    }
+    #blue:checked ~ .content {
+      background: #e2ecff;
+      color: #1760a8;
+    }
+    #pink:checked ~ .content {
+      background: #ffe4ef;
+      color: #a03c7c;
+    }
+    #purple:checked ~ .content {
+      background: #e7d1fc;
+      color: #612875;
+    }
+    #yellow:checked ~ .content {
+      background: #ffffea;
+      color: #998800;
+    }
+    #none:checked ~ .content {
+      background: white;
+      color: #333;
+      box-shadow: none;
+      border: 1px solid #ccc;
+    }
+    h1 {
+      font-size: 40px;
+      color: black;
+      border: 3px solid red;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      background: #fee6e6;
+    }
+  </style>
+</head>
+<body>
+<h4>Samanvitha-4MW23CS132</h4>
+  <input type="radio" id="blue" name="sheet" checked />
+  <input type="radio" id="pink" name="sheet" />
+  <input type="radio" id="purple" name="sheet" />
+  <input type="radio" id="yellow" name="sheet" />
+  <input type="radio" id="none" name="sheet" />
+  <div class="menu">
+    <label for="blue">Stylesheet 1</label>
+    <label for="pink">Stylesheet 2</label>
+    <label for="purple">Stylesheet 3</label>
+    <label for="yellow">Stylesheet 4</label>
+    <label for="none">No Stylesheet</label>
+  </div>
+  <div class="content">
+    <h1>Welcome to My HomePage</h1>
+    <h3>Use the menu to select different stylesheets</h3>
+    <p>
+      This is a demonstration of how different stylesheets can change the layout
+      of your HTML page. You can change the layout by selecting different
+      stylesheets in the menu.
+    </p>
+    <h3>No styles</h3>
+    <p>
+      This page uses DIV elements to group different sections of the HTML page.
+      "No Stylesheet" shows the page with minimal styling.
+    </p>
+  </div>
+</body>
+</html>
