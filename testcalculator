@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 5px 0;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .add       { background-color: #2ecc71; }
+    .subtract  { background-color: #e74c3c; }
+    .multiply  { background-color: #9b59b6; }
+    .divide    { background-color: #3498db; }
+    .remainder { background-color: #e67e22; }
+    .power     { background-color: #16a085; }
+    .square    { background-color: #34495e; }
+    .sqrt      { background-color: #f1c40f; color: #333; }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Calculator</h2>
+    <h5>Samanvitha K -4MW23CS132</h5>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <button class="add" onclick="calculate('add')">Add</button>
+    <button class="subtract" onclick="calculate('subtract')">Subtract</button>
+    <button class="multiply" onclick="calculate('multiply')"> Multiply</button>
+    <button class="divide" onclick="calculate('divide')">Divide</button>
+    <button class="remainder" onclick="calculate('remainder')">Remainder</button>
+    <button class="power" onclick="calculate('power')">Power</button>
+    <button class="square" onclick="calculate('square')">Square</button>
+    <button class="sqrt" onclick="calculate('sqrt')"> Square Root</button>
+
+    <div id="result">Result: </div>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+
+      switch (operation) {
+        case 'add':
+          result = num1 + num2;
+          break;
+        case 'subtract':
+          result = num1 - num2;
+          break;
+        case 'multiply':
+          result = num1 * num2;
+          break;
+        case 'divide':
+          result = num2 !== 0 ? (num1 / num2) : "Cannot divide by zero";
+          break;
+        case 'remainder':
+          result = num2 !== 0 ? (num1 % num2) : "Cannot divide by zero";
+          break;
+        case 'power':
+          result = Math.pow(num1, num2);
+          break;
+        case 'square':
+          result = `Square of ${num1}: ${num1 * num1}, Square of ${num2}: ${num2 * num2}`;
+          break;
+        case 'sqrt':
+          result = `√${num1}: ${Math.sqrt(num1).toFixed(2)}, √${num2}: ${Math.sqrt(num2).toFixed(2)}`;
+          break;
+        default:
+          result = "Invalid Operation";
+      }
+
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+
+</body>
+</html>
